@@ -1,0 +1,52 @@
+/** All distances in metres, masses in kg, forces in N, angles in radians. */
+export const CONFIG = {
+  match: { ends: 12, arrowsPerEnd: 6, distance: 70 },
+  target: {
+    radius: 0.61,
+    centerHeight: 1.3,
+    backingRadius: 0.76,
+    depth: 0.22,
+    xRadius: 0.0305,
+  },
+  bow: {
+    drawWeight: 195.72,
+    maxDrawLength: 0.7,
+    efficiency: 0.8,
+    drawSeconds: 1.45,
+    fatigueAfter: 4,
+    fatigueRamp: 9,
+    maxFatigueLoss: 0.065,
+    minRelease: 0.12,
+  },
+  arrow: {
+    mass: 0.024,
+    radius: 0.003,
+    length: 0.76,
+    axialArea: 0.0000283,
+    sideArea: 0.00024,
+    axialCd: 1.15,
+    sideCd: 0.85,
+  },
+  physics: {
+    gravity: 9.80665,
+    airDensity: 1.225,
+    fixedStep: 1 / 240,
+    maxFlightTime: 9,
+    maxFrameDelta: 0.05,
+  },
+  aim: {
+    sensitivity: 0.000055,
+    yawLimit: 0.13,
+    pitchLimit: 0.15,
+    baseSway: 0.00019,
+    fatigueSway: 0.0008,
+    launchHeight: 1.55,
+  },
+  camera: { idleFov: 38, aimFov: 9, shotDuration: 2.2, recoil: 0.012 },
+  visuals: {
+    maxPixelRatio: 1.7,
+    treeCount: 280,
+    grassCount: 16000,
+    rainCount: 1600,
+  },
+} as const;
