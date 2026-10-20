@@ -19,6 +19,16 @@ npm run build    # 타입 검사 + 프로덕션 빌드
 npm run preview  # dist 빌드 실행
 ```
 
+## GitHub Pages 배포
+
+1. GitHub 저장소의 **Settings → Pages → Build and deployment → Source**를 **GitHub Actions**로 설정합니다.
+2. 변경 사항을 `main` 브랜치에 push하면 `.github/workflows/deploy-pages.yml`이 의존성 설치, 테스트, 빌드 후 `dist`를 배포합니다.
+3. **Actions → Deploy to GitHub Pages → Run workflow**에서 수동으로 실행할 수도 있습니다.
+
+기본 배포 주소는 https://seoiiwon.github.io/archery-web/ 입니다. 실제 배포 주소는 워크플로의 `github-pages` 환경에서도 확인할 수 있습니다.
+
+워크플로는 GitHub Pages 설정에서 기본 경로를 읽어 Vite의 `--base`에 전달합니다. 따라서 저장소 하위 경로와 커스텀 도메인에 맞는 에셋 경로가 생성되며, 로컬 개발 설정은 그대로 사용할 수 있습니다. 인증에는 기본 `GITHUB_TOKEN`을 사용하므로 별도 토큰을 등록할 필요가 없습니다.
+
 ## 플레이
 
 - 경기장에서 **좌클릭 유지**: 활시위를 당기며 조준 확대
